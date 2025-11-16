@@ -1,0 +1,22 @@
+# Игнорируем JAR-файлы
+*.jar
+
+# Игнорируем миры
+world/
+world_nether/
+world_the_end/
+*/world/
+*/world_nether/
+*/world_the_end/
+
+# Лог-файлы
+logs/
+*.log
+
+# Кеши
+cache/
+
+# Прочее
+*.lock
+*.json
+!package.json
