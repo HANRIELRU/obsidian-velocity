@@ -41,18 +41,20 @@ if %MAJOR% LSS 17 (
 
 echo ✅ Java %JAVA_VER% detected
 
-if not exist "%SERVER_JAR%" (
-    echo 📥 Downloading Velocity %VELOCITY_VERSION% (build %VELOCITY_BUILD%)...
-    powershell -Command "Invoke-WebRequest -Uri 'https://api.papermc.io/v2/projects/velocity/versions/%VELOCITY_VERSION%/builds/%VELOCITY_BUILD%/downloads/velocity-%VELOCITY_VERSION%-%VELOCITY_BUILD%.jar' -OutFile '%SERVER_JAR%'"
-    if errorlevel 1 (
-        echo ❌ Failed to download Velocity
-        pause
-        exit /b 1
-    )
-    echo ✅ Velocity downloaded successfully
-) else (
-    echo ✅ Velocity JAR found
-)
+:: TODO: FIX THAT
+
+@REM if not exist %SERVER_JAR% (
+@REM     echo 📥 Downloading Velocity %VELOCITY_VERSION% (build %VELOCITY_BUILD%)...
+@REM     powershell -Command "Invoke-WebRequest -Uri 'https://api.papermc.io/v2/projects/velocity/versions/%VELOCITY_VERSION%/builds/%VELOCITY_BUILD%/downloads/velocity-%VELOCITY_VERSION%-%VELOCITY_BUILD%.jar' -OutFile '%SERVER_JAR%'"
+@REM     if errorlevel 1 (
+@REM         echo ❌ Failed to download Velocity
+@REM         pause
+@REM         exit /b 1
+@REM     )
+@REM     echo ✅ Velocity downloaded successfully
+@REM ) else (
+@REM     echo ✅ Velocity JAR found
+@REM )
 
 echo 🎯 Starting Velocity with %JAVA_MEMORY%
 echo 📝 Logs: logs\latest.log
